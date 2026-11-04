@@ -1,81 +1,120 @@
-# Sooraj M S — Editable Portfolio
+# ✨ Editable Portfolio – Personal Portfolio Website
 
-Your original design, rebuilt as **React + TypeScript + Vite** with a built-in editor.
-Everything on the page is data, so you can change it from the browser — no code.
+A customizable personal portfolio website built with React, TypeScript, and Vite, featuring a built-in visual editor that allows you to manage and update portfolio content directly through the browser without modifying source code.
 
-## What you can edit (after logging in)
+🌐 **Live Demo:** [Portfolio Editor](https://soorajstudio.github.io/Portfolio-Editor/)
 
-| Want to… | How |
+## 🚀 Features
+
+### Visual Portfolio Editor
+- Click and edit text directly on the website.
+- Automatically save content changes.
+- Add, remove, hide, and reorder portfolio sections.
+- Customize navigation labels.
+- Add, edit, delete, and reorder projects and other content items.
+- Upload, replace, and remove images.
+
+### Content Management
+- Manage Hero, About, Skills, Timeline, Projects, Education, and Contact sections.
+- Add custom sections.
+- Undo previous changes.
+- Preview the portfolio as visitors see it.
+- Export and import portfolio content using JSON.
+
+### Authentication & Storage
+- Admin login for editing access.
+- Local browser storage mode.
+- Supabase integration for persistent content.
+- Image storage using Supabase Storage.
+
+## 🛠️ Technology Stack
+
+| Technology | Purpose |
 |---|---|
-| Change any text (headings, paragraphs, labels, nav brand, footer…) | Click it and type. It saves automatically. |
-| Hero headline colour/line breaks | Wrap a word in `*stars*` for brass; press Enter for a new line |
-| Bold text in paragraphs | Wrap in `**double stars**` |
-| Add a whole new section (e.g. **Certificates**) | Bottom bar → **+ Add section** |
-| Delete / reorder a section | Toolbar at the top-right of each section (↑ ↓ Delete) |
-| Rename / hide a section in the top nav | Same toolbar → "Nav label" (empty = hidden) |
-| Add / delete / reorder items (cards, projects, timeline entries, chips, stats, links…) | Hover an item → ↑ ↓ ✕ ; use the dashed **+ add** buttons |
-| Add / replace / remove images | **Upload / Replace / Remove** buttons on the about photo, each project, and each card |
-| Undo a mistake | Bottom bar → **↶ Undo** |
-| See the site as visitors do | Bottom bar → **Preview** |
-| Back up / restore | **Export** / **Import** (JSON) |
+| React | User interface |
+| TypeScript | Type safety |
+| Vite | Development and build |
+| CSS3 | Styling and animations |
+| Supabase | Authentication and database |
+| PostgreSQL | Content storage |
+| GitHub Pages | Deployment |
 
-Open the editor with the small **Admin** link in the footer (or `Ctrl/Cmd + Shift + E`).
+## 📸 Screenshots
 
-## Run it
+Add screenshots of:
+- Portfolio homepage
+- Visual editing interface
+- Section management
+- Admin login
+- Preview mode
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/soorajstudio/Portfolio-Editor.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd Portfolio-Editor
+```
+
+Install dependencies:
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
 ```
 
-With no config it runs in **local mode**: edits are stored in *this browser only* — great for trying it out.
-To let edits go live for every visitor, connect Supabase (below).
+Start the development server:
 
-## Go live with Supabase (free tier is enough)
-
-1. Create a project at <https://supabase.com>.
-2. **SQL Editor** → paste `supabase/schema.sql` → Run. (Creates the content table + public image bucket + security rules.)
-3. **Authentication → Users → Add user** → create your email + password.
-4. **Authentication → Providers → Email → turn OFF "Allow new users to sign up".**
-   (Important: the rules let any logged-in user edit, so only you should exist.)
-5. **Project Settings → API** → copy the *Project URL* and *anon public* key.
-6. `cp .env.example .env` and fill in:
-   ```
-   VITE_SUPABASE_URL=https://xxxx.supabase.co
-   VITE_SUPABASE_ANON_KEY=eyJ...
-   ```
-7. `npm run dev`, click **Admin**, sign in. Edits now save to Supabase and appear for all visitors.
-
-## Deploy
-
-`npm run build` → upload the `dist/` folder to Vercel / Netlify / Cloudflare Pages.
-Set the same two `VITE_…` variables in the host's environment settings.
-
-## Project layout
-
-```
-src/
-  types.ts            content model (all section types)
-  defaultContent.ts   your original portfolio content
-  storage.ts          Supabase (or localStorage) load/save, image upload, auth
-  store.tsx           app state, autosave, undo, section actions
-  App.tsx             nav, section router, edit bar, login, "add section" templates
-  components/
-    ui.tsx            Text (click-to-edit), Chips, ImageSlot, ItemBar, SectionBar…
-    sections.tsx      Hero, About, Skills, Timeline, Projects, Education, Cards, Text, Contact
-    Visuals.tsx       the original project SVG illustrations (used until you upload an image)
-    effects.tsx       scroll progress, custom cursor, topographic hero background
-  base.css            your original styles
-  edit.css            editor-only styles
+```bash
+npm run dev
 ```
 
-## Adding a brand-new kind of section later
+Open the local development URL displayed in your terminal.
 
-1. Add an interface to `src/types.ts` and include it in the `Section` union.
-2. Create a component in `components/sections.tsx` (copy `TextBlock` as a starting point).
-3. Add a `case` in `SectionRenderer` and a template in `TEMPLATES` (both in `App.tsx`).
+## 🔐 Supabase Configuration
 
-## Notes
+To enable persistent editing across visitors:
 
-- Local mode embeds images in browser storage (~5 MB limit). Images are auto-resized to ≤1600 px; for lots of images use Supabase.
-- The original "fake smooth-scroll" wrapper was replaced with native smooth scrolling, because it breaks when content height changes while editing.
+1. Create a Supabase project.
+2. Run the SQL script from `supabase/schema.sql`.
+3. Create an admin user.
+4. Disable public user registration.
+5. Configure your environment variables.
+
+Create a `.env` file:
+
+```env
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+The application can also run in local mode without Supabase configuration.
+
+## 📦 Production Build
+
+Build the application:
+
+```bash
+npm run build
+```
+
+The production files will be generated inside the `dist/` directory.
+
+## 🌍 Live Deployment
+
+[View Live Portfolio](https://soorajstudio.github.io/Portfolio-Editor/)
+
+## 👨‍💻 Developer
+
+**Sooraj MS**
+
+- GitHub: [@soorajstudio](https://github.com/soorajstudio)
+
+---
+
+⭐ If you find this project interesting, consider giving it a star!
