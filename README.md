@@ -1,120 +1,59 @@
-# ✨ Editable Portfolio – Personal Portfolio Website
+# ✨ Sooraj MS — Developer Portfolio & Profile Editor
 
-A customizable personal portfolio website built with React, TypeScript, and Vite, featuring a built-in visual editor that allows you to manage and update portfolio content directly through the browser without modifying source code.
+<div align="center">
 
-🌐 **Live Demo:** [Portfolio Editor](https://soorajstudio.github.io/Portfolio-Editor/)
+[![React](https://img.shields.io/badge/React-18.3-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Supabase](https://img.shields.io/badge/Supabase-Database-3ECF8E?style=flat-square&logo=supabase&logoColor=white)](https://supabase.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 
-## 🚀 Features
+A modern, highly customizable personal developer portfolio and resume website built with React, TypeScript, and Supabase for live content updates.
 
-### Visual Portfolio Editor
-- Click and edit text directly on the website.
-- Automatically save content changes.
-- Add, remove, hide, and reorder portfolio sections.
-- Customize navigation labels.
-- Add, edit, delete, and reorder projects and other content items.
-- Upload, replace, and remove images.
+<br/>
 
-### Content Management
-- Manage Hero, About, Skills, Timeline, Projects, Education, and Contact sections.
-- Add custom sections.
-- Undo previous changes.
-- Preview the portfolio as visitors see it.
-- Export and import portfolio content using JSON.
+<img src="./docs/screenshots/portfolio-hero.png" alt="Sooraj MS Portfolio Preview" width="100%" />
 
-### Authentication & Storage
-- Admin login for editing access.
-- Local browser storage mode.
-- Supabase integration for persistent content.
-- Image storage using Supabase Storage.
-
-## 🛠️ Technology Stack
-
-| Technology | Purpose |
-|---|---|
-| React | User interface |
-| TypeScript | Type safety |
-| Vite | Development and build |
-| CSS3 | Styling and animations |
-| Supabase | Authentication and database |
-| PostgreSQL | Content storage |
-| GitHub Pages | Deployment |
-
-## 📸 Screenshots
-
-Add screenshots of:
-- Portfolio homepage
-- Visual editing interface
-- Section management
-- Admin login
-- Preview mode
-
-## ⚙️ Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/soorajstudio/Portfolio-Editor.git
-```
-
-Navigate to the project directory:
-
-```bash
-cd Portfolio-Editor
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Open the local development URL displayed in your terminal.
-
-## 🔐 Supabase Configuration
-
-To enable persistent editing across visitors:
-
-1. Create a Supabase project.
-2. Run the SQL script from `supabase/schema.sql`.
-3. Create an admin user.
-4. Disable public user registration.
-5. Configure your environment variables.
-
-Create a `.env` file:
-
-```env
-VITE_SUPABASE_URL=your_supabase_project_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
-The application can also run in local mode without Supabase configuration.
-
-## 📦 Production Build
-
-Build the application:
-
-```bash
-npm run build
-```
-
-The production files will be generated inside the `dist/` directory.
-
-## 🌍 Live Deployment
-
-[View Live Portfolio](https://soorajstudio.github.io/Portfolio-Editor/)
-
-## 👨‍💻 Developer
-
-**Sooraj MS**
-
-- GitHub: [@soorajstudio](https://github.com/soorajstudio)
+</div>
 
 ---
 
-⭐ If you find this project interesting, consider giving it a star!
+## 📸 Previews
+
+| Interactive Hero Showcase | About & Engineering Bio |
+| :---: | :---: |
+| <img src="./docs/screenshots/portfolio-hero.png" width="100%" /> | <img src="./docs/screenshots/portfolio-projects.png" width="100%" /> |
+| **Hero & Engineering Tags** | **Bio, Experience & Research Focus** |
+
+---
+
+## ✨ Features
+
+- 💼 **Full-Stack Profile Hub**: Highlights work experience, research papers, technical skills, and featured software projects.
+- ⚡ **Supabase Backend Integration**: Real-time content synchronization allows updating skills, bios, and links without redeploying code.
+- 🌐 **Responsive Studio UI**: Tailored typography, GPS coordinate HUD, and dark mode aesthetic.
+- 🛡️ **Steganography & AI Showcase**: Dedicated showcase sections for deep learning research (SRNet) and GIS spatial projects.
+
+---
+
+## 🚀 How to Run
+
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+2. **Start Dev Server**:
+   ```bash
+   npm run dev
+   ```
+   Then open [`http://localhost:5173`](http://localhost:5173).
+3. **Build for Production**:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📄 License
+
+MIT License © 2026 [Sooraj Studio](https://github.com/soorajstudio)
